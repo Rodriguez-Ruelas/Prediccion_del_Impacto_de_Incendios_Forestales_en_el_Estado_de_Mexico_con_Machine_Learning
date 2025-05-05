@@ -1,0 +1,1 @@
+# Predicci-n_del_Impacto_de_Incendios_Forestales_en_el_Estado_de_M-xico_con_Machine_Learning
