@@ -14,7 +14,7 @@ Se construyó una base de datos a partir de reportes oficiales de incendios (202
 * Georreferenciación y emparejamiento espacial (por distancia)
 * Agregación semanal de variables climáticas
 
-Posteriormente, se entrenaron modelos de clasificación (XGBoost) y regresión (Red neuronal artificial) con un conjunto balanceado. Los resultados muestran una alta precisión general para predecir impactos mínimos, pero también evidencian desafíos ante la desproporción de clases.
+Posteriormente, se entrenaron modelos de clasificación (XGBoost) y regresión (Red neuronal artificial - ANN). Los resultados muestran una alta precisión general para predecir impactos mínimos, pero también evidencian desafíos ante la desproporción de clases. En cuanto a la regresión, el modelo ANN mostró un desempeño bajo con R² negativo.
 
 Este trabajo sienta las bases para una herramienta predictiva útil en la gestión y prevención de incendios forestales.
 
@@ -28,22 +28,22 @@ Este trabajo sienta las bases para una herramienta predictiva útil en la gesti�
 
 ## 💡 Objetivos
 
-* Predecir la severidad del impacto de incendios usando clasificadores
-* Estimar la superficie quemada con una red neuronal de regresión
+* Predecir la severidad del impacto de incendios usando clasificadores (XGBoost)
+* Estimar la superficie quemada con una red neuronal de regresión (ANN)
 * Analizar la influencia de variables climáticas y espaciales en la severidad
 
-## 📊 Estructura de carpetas
+## 📊 Scripts
 
 ```
 /ANN/
-├── 01_union_datos.py
-├── 02_resumen_climatico.py
-├── 03_union_clima_incendios.py
-├── 04_limpieza_final.py
-├── 05_modelo_XGBoost.py
-├── 06_ANN_clasificacion.py
-├── 07_ANN_regresion_superficie.py
-├── dataset_incendios_clima_limpio.xlsx
+├── 01 Descargar datos  Estado.py
+├── 02 Data (TXT).py
+├── 03 Data (Excel).py
+├── 04 Union (TXT y Excel).py
+├── 05 Eliminar faltantes.py
+├── 06  XGBoost.py
+├── 07 ANN.py
+
 ```
 
 ## 📃 Dataset
@@ -57,6 +57,7 @@ Este trabajo sienta las bases para una herramienta predictiva útil en la gesti�
 * ✅ **Precisión > 90%** en clases mayoritarias usando XGBoost
 * ❗ Dificultades al clasificar clases raras (severo, moderado)
 * 🌿 Superficie, latitud, semana y días/persona = variables más relevantes
+* 🔵 **Regresión ANN (Superficie)**: MAE = 23.82 | RMSE = 70.67 | R² = -0.40 (desempeño bajo)
 
 ## 🌐 Autor
 
