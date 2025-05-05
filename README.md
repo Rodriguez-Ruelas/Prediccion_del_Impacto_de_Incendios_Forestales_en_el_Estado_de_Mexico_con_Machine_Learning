@@ -6,7 +6,7 @@
 
 ## 📚 Resumen
 
-Los incendios forestales constituyen una amenaza creciente para los ecosistemas y la población del Estado de México. Este proyecto presenta un enfoque basado en aprendizaje automático para predecir el **impacto** (clasificado en mínimo, moderado o severo) y la **superficie afectada** por incendios forestales, integrando datos climáticos semanales, geográficos y operativos.
+Los incendios forestales constituyen una amenaza creciente para los ecosistemas y la población del Estado de México. Este proyecto presenta un enfoque basado en aprendizaje automático para predecir el **impacto** (clasificado en mínimo, moderado o severo) de los incendios forestales, integrando datos climáticos semanales, geográficos y operativos.
 
 Se construyó una base de datos a partir de reportes oficiales de incendios (2022–2025) y registros climáticos diarios, que fueron procesados y unificados mediante:
 
@@ -14,7 +14,7 @@ Se construyó una base de datos a partir de reportes oficiales de incendios (202
 * Georreferenciación y emparejamiento espacial (por distancia)
 * Agregación semanal de variables climáticas
 
-Posteriormente, se entrenaron modelos de clasificación (XGBoost) y regresión (Red neuronal artificial - ANN). Los resultados muestran una alta precisión general para predecir impactos mínimos, pero también evidencian desafíos ante la desproporción de clases. En cuanto a la regresión, el modelo ANN mostró un desempeño bajo con R² negativo.
+Posteriormente, se entrenó un modelo de clasificación (XGBoost). Los resultados muestran una alta precisión general para predecir impactos mínimos, aunque también evidencian desafíos ante la desproporción de clases.
 
 Este trabajo sienta las bases para una herramienta predictiva útil en la gestión y prevención de incendios forestales.
 
@@ -29,21 +29,18 @@ Este trabajo sienta las bases para una herramienta predictiva útil en la gesti�
 ## 💡 Objetivos
 
 * Predecir la severidad del impacto de incendios usando clasificadores (XGBoost)
-* Estimar la superficie quemada con una red neuronal de regresión (ANN)
 * Analizar la influencia de variables climáticas y espaciales en la severidad
 
-## 📊 Scripts
+## 📊 Estructura de carpetas
 
 ```
 /ANN/
-├── 01 Descargar datos  Estado.py
+├── 01 Descargar datos Estado.py
 ├── 02 Data (TXT).py
 ├── 03 Data (Excel).py
 ├── 04 Union (TXT y Excel).py
 ├── 05 Eliminar faltantes.py
-├── 06  XGBoost.py
-├── 07 ANN.py
-
+├── 06 XGBoost.py
 ```
 
 ## 📃 Dataset
@@ -57,7 +54,6 @@ Este trabajo sienta las bases para una herramienta predictiva útil en la gesti�
 * ✅ **Precisión > 90%** en clases mayoritarias usando XGBoost
 * ❗ Dificultades al clasificar clases raras (severo, moderado)
 * 🌿 Superficie, latitud, semana y días/persona = variables más relevantes
-* 🔵 **Regresión ANN (Superficie)**: MAE = 23.82 | RMSE = 70.67 | R² = -0.40 (desempeño bajo)
 
 ## 🌐 Autor
 
