@@ -14,7 +14,7 @@ Se construyó una base de datos a partir de reportes oficiales de incendios (202
 * Georreferenciación y emparejamiento espacial (por distancia)
 * Agregación semanal de variables climáticas
 
-Posteriormente, se entrenaron modelos de clasificación (Random Forest, XGBoost) y regresión (Red neuronal artificial) con un conjunto balanceado. Los resultados muestran una alta precisión general para predecir impactos mínimos, pero también evidencian desafíos ante la desproporción de clases.
+Posteriormente, se entrenaron modelos de clasificación (XGBoost) y regresión (Red neuronal artificial) con un conjunto balanceado. Los resultados muestran una alta precisión general para predecir impactos mínimos, pero también evidencian desafíos ante la desproporción de clases.
 
 Este trabajo sienta las bases para una herramienta predictiva útil en la gestión y prevención de incendios forestales.
 
