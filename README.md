@@ -1,65 +1,57 @@
-# 🔥 Predicción del Impacto de Incendios Forestales en el Estado de México con Machine Learning
+🌲 Ciencia de Datos para Incendios Forestales: Integración y Predicción con Machine Learning
+📘 Descripción
+Este proyecto muestra cómo estructurar un flujo completo de ciencia de datos aplicado a problemas ambientales, como la predicción del impacto de incendios forestales. A través de la integración de datos climáticos históricos y reportes oficiales de incendios, se construye un conjunto de datos robusto que permite el entrenamiento de modelos de aprendizaje automático.
 
-## 📅 Periodo de estudio
+Si bien aquí se aborda el caso del Estado de México, esta metodología es ampliamente adaptable a contextos agrícolas, forestales y ecológicos en otras regiones.
 
-2022 - 2025
+⚙️ ¿Qué hace este proyecto?
+Descarga y procesamiento de datos climáticos diarios (TXT) → resumen semanal.
 
-## 📚 Resumen
+Lectura y filtrado de reportes de incendios (Excel).
 
-Los incendios forestales constituyen una amenaza creciente para los ecosistemas y la población del Estado de México. Este proyecto presenta un enfoque basado en aprendizaje automático para predecir el **impacto** (clasificado en mínimo, moderado o severo) de los incendios forestales, integrando datos climáticos semanales, geográficos y operativos.
+Emparejamiento espacial entre estaciones meteorológicas e incendios (por cercanía).
 
-Se construyó una base de datos a partir de reportes oficiales de incendios (2022–2025) y registros climáticos diarios, que fueron procesados y unificados mediante:
+Unificación de datos por estación y semana.
 
-* Limpieza de datos
-* Georreferenciación y emparejamiento espacial (por distancia)
-* Agregación semanal de variables climáticas
+Limpieza de valores nulos para garantizar consistencia.
 
-Posteriormente, se entrenó un modelo de clasificación (XGBoost). Los resultados muestran una alta precisión general para predecir impactos mínimos, aunque también evidencian desafíos ante la desproporción de clases.
+Entrenamiento y validación de un clasificador multiclase (XGBoost).
 
-Este trabajo sienta las bases para una herramienta predictiva útil en la gestión y prevención de incendios forestales.
+Evaluación con matriz de confusión y métricas por clase.
 
-## 🔍 Tecnologías y herramientas
+🧪 Aplicaciones potenciales
+Predicción del impacto de fenómenos ambientales (heladas, plagas, sequías)
 
-* Python 3.13
-* pandas, numpy, matplotlib, seaborn
-* scikit-learn
-* xgboost
-* SMOTE (imbalanced-learn)
+Apoyo a decisiones de gestión de riesgo agroforestal
 
-## 💡 Objetivos
+Modelado de relaciones clima-evento en zonas rurales
 
-* Predecir la severidad del impacto de incendios usando clasificadores (XGBoost)
-* Analizar la influencia de variables climáticas y espaciales en la severidad
+Entrenamiento de modelos con etiquetas de severidad (mínimo, moderado, severo)
 
-## 📊 Estructura de carpetas
+Adaptación para uso en evaluaciones de impacto ambiental
 
-```
-/ANN/
-├── 01 Descargar datos Estado.py
-├── 02 Data (TXT).py
-├── 03 Data (Excel).py
-├── 04 Union (TXT y Excel).py
-├── 05 Eliminar faltantes.py
-├── 06 XGBoost.py
-```
+🗂️ Estructura del proyecto
+Script	Función
+01 Descargar datos Estado.py	Descarga datos climáticos oficiales
+02 Data (TXT).py	Procesa archivos TXT diarios de clima
+03 Data (Excel).py	Limpia y filtra reportes de incendios
+04 Union (TXT y Excel).py	Empareja por ubicación y une ambas fuentes
+05 Eliminar faltantes.py	Elimina entradas con datos incompletos
+06 XGBoost.py	Entrena un clasificador y genera métricas
 
-## 📃 Dataset
+📈 Resultados
+Precisión alta en clases mayoritarias
 
-* Incendios forestales (datos oficiales 2022–2025)
-* Datos climáticos diarios (convertidos a semanales)
-* Variables: temperatura media/máxima/mínima, precipitación, evaporación, altitud, distancia, superficie quemada, entre otras
+Clasificación multiclase con XGBoost
 
-## 📊 Resultados principales
+Variables más influyentes: superficie, temperatura media, latitud y semana
 
-* ✅ **Precisión > 90%** en clases mayoritarias usando XGBoost
-* ❗ Dificultades al clasificar clases raras (severo, moderado)
-* 🌿 Superficie, latitud, semana y días/persona = variables más relevantes
+Evaluación con matriz de confusión y reporte detallado
 
-## 🌐 Autor
+🖼️ Visual del flujo (propuesta)
+¿Quieres que genere una imagen tipo diagrama con todo este flujo? Puedo hacértela enseguida para que la incluyas como flujo.png en el repositorio.
 
-Raúl Alfonso Rodríguez Ruelas
-[GitHub](https://github.com/Rodriguez-Ruelas)
-[LinkedIn](https://www.linkedin.com/in/raul-rodriguez-ruelas-20634a171)
+
 
 ## ✍️ Cita sugerida
 
