@@ -1,60 +1,76 @@
-🌲 Ciencia de Datos para Incendios Forestales: Integración y Predicción con Machine Learning
-📘 Descripción
-Este proyecto muestra cómo estructurar un flujo completo de ciencia de datos aplicado a problemas ambientales, como la predicción del impacto de incendios forestales. A través de la integración de datos climáticos históricos y reportes oficiales de incendios, se construye un conjunto de datos robusto que permite el entrenamiento de modelos de aprendizaje automático.
+# 🔥 Ciencia de Datos para el Análisis de Incendios Forestales en el Estado de México
 
-Si bien aquí se aborda el caso del Estado de México, esta metodología es ampliamente adaptable a contextos agrícolas, forestales y ecológicos en otras regiones.
+## 📘 Descripción general
 
-⚙️ ¿Qué hace este proyecto?
-Descarga y procesamiento de datos climáticos diarios (TXT) → resumen semanal.
+Este proyecto presenta un enfoque práctico de ciencia de datos para analizar el impacto de incendios forestales en el Estado de México, combinando procesamiento estadístico, limpieza de datos y algoritmos de aprendizaje automático. El objetivo es demostrar cómo una **metodología estructurada puede aprovechar datos públicos** para resolver problemas ambientales complejos, como la predicción de la severidad de incendios forestales.
 
-Lectura y filtrado de reportes de incendios (Excel).
+La lógica desarrollada es completamente replicable y puede adaptarse a contextos agrícolas, ecológicos, forestales o urbanos que demanden integración de datos climáticos, espaciales y operativos para tomar decisiones informadas.
 
-Emparejamiento espacial entre estaciones meteorológicas e incendios (por cercanía).
+## 🎯 Propósito
 
-Unificación de datos por estación y semana.
+- Integrar fuentes de datos diversos (climáticos, operativos y geográficos)
+- Aplicar limpieza y preprocesamiento estadístico de datos
+- Entrenar modelos predictivos (XGBoost) que clasifiquen la severidad del impacto
+- Evaluar la importancia de variables y balancear clases mediante técnicas como SMOTE
 
-Limpieza de valores nulos para garantizar consistencia.
+## 🧪 ¿Por qué es relevante?
 
-Entrenamiento y validación de un clasificador multiclase (XGBoost).
+Este flujo de trabajo puede ser utilizado en múltiples áreas:
 
-Evaluación con matriz de confusión y métricas por clase.
+- Predicción de rendimiento agrícola en parcelas con distintas condiciones climáticas
+- Evaluación de riesgo de plagas o enfermedades forestales
+- Clasificación de zonas prioritarias para intervención ambiental
+- Predicción de eventos extremos relacionados con el clima
 
-🧪 Aplicaciones potenciales
-Predicción del impacto de fenómenos ambientales (heladas, plagas, sequías)
+## 🔄 Flujo de trabajo
 
-Apoyo a decisiones de gestión de riesgo agroforestal
+<p align="center">
+  <img src="https://github.com/Rodriguez-Ruelas/Prediccion_del_Impacto_de_Incendios_Forestales_en_el_Estado_de_Mexico_con_Machine_Learning/blob/main/Image/diagrama.png" width="650" alt="Flujo del proyecto"/>
+  <br/>
+  <sub><b>Figura:</b> Diagrama del flujo de trabajo implementado para el análisis y modelado de datos de incendios forestales.</sub>
+</p>
 
-Modelado de relaciones clima-evento en zonas rurales
+## 🧩 Estructura del repositorio
 
-Entrenamiento de modelos con etiquetas de severidad (mínimo, moderado, severo)
+El proyecto se compone de seis scripts secuenciales:
 
-Adaptación para uso en evaluaciones de impacto ambiental
+| Script                            | Descripción                                                                 |
+|-----------------------------------|-----------------------------------------------------------------------------|
+| `01 Descargar datos Estado.py`    | Descarga y filtra incendios del Estado de México desde archivos oficiales  |
+| `02 Data (TXT).py`                | Procesamiento de archivos .txt climáticos diarios                          |
+| `03 Data (Excel).py`              | Procesamiento de datos semanales climáticos en Excel                       |
+| `04 Union (TXT y Excel).py`       | Integración de ambas fuentes climáticas, más datos de incendios            |
+| `05 Eliminar faltantes.py`        | Eliminación de registros con datos incompletos                             |
+| `06 XGBoost.py`                   | Modelado predictivo con XGBoost, balanceo de clases con SMOTE y evaluación |
 
-🗂️ Estructura del proyecto
-Script	Función
-01 Descargar datos Estado.py	Descarga datos climáticos oficiales
-02 Data (TXT).py	Procesa archivos TXT diarios de clima
-03 Data (Excel).py	Limpia y filtra reportes de incendios
-04 Union (TXT y Excel).py	Empareja por ubicación y une ambas fuentes
-05 Eliminar faltantes.py	Elimina entradas con datos incompletos
-06 XGBoost.py	Entrena un clasificador y genera métricas
+## 🛠️ Tecnologías empleadas
 
-📈 Resultados
-Precisión alta en clases mayoritarias
+- Python 3.11+
+- `pandas`, `numpy`, `matplotlib`, `seaborn`
+- `xgboost`, `scikit-learn`
+- `imbalanced-learn` para SMOTE
 
-Clasificación multiclase con XGBoost
+## 📃 Dataset
 
-Variables más influyentes: superficie, temperatura media, latitud y semana
+- Incendios forestales en el Estado de México (2022–2025)
+- Datos climáticos diarios y semanales
+- Variables utilizadas: temperatura media/máx/mín, precipitación, evaporación, altitud, superficie, distancia a municipios, días/hombre, entre otras
 
-Evaluación con matriz de confusión y reporte detallado
+## 📈 Resultados clave
 
-🖼️ Visual del flujo (propuesta)
-¿Quieres que genere una imagen tipo diagrama con todo este flujo? Puedo hacértela enseguida para que la incluyas como flujo.png en el repositorio.
+- Precisión general superior al 90% en clases frecuentes
+- La clase “severo” es difícil de predecir por desbalance
+- Variables más importantes: superficie quemada, altitud, semana del año, distancia
+- El modelo XGBoost se comportó robustamente con variables numéricas
 
+---
 
+## 👤 Autor
 
-## ✍️ Cita sugerida
+**Raúl Alfonso Rodríguez Ruelas**  
+[GitHub](https://github.com/Rodriguez-Ruelas)  
+[LinkedIn](https://www.linkedin.com/in/raul-rodriguez-ruelas-20634a171/)
 
-```
-Rodríguez Ruelas, R. A. (2025). Predicción del impacto de incendios forestales mediante aprendizaje automático. GitHub Repository. https://github.com/Rodriguez-Ruelas
-```
+---
+
+> *Rodríguez Ruelas, R. A. (2025). Ciencia de Datos para el Análisis de Incendios Forestales. GitHub Repository. https://github.com/Rodriguez-Ruelas*
